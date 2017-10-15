@@ -1,0 +1,39 @@
+.x > ul {
+	background-color: black;
+	color: white;
+	font-size: 200%;
+	font-family: helvetica;
+}
+
+.x > ul > li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 5px 25px;
+	position: relative; 
+
+}
+
+.x > ul > li:hover {
+	background-color: grey;
+}
+
+ul.y {
+	position: absolute;
+	background-color: grey;
+	list-style-type: none; 
+	width: 125px;
+	padding-left: 5px;
+	margin-left: -25px;
+	padding-top: 5px;
+	opacity:0;	
+}
+
+ul.y li {
+	padding-left: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.x li:hover .y {
+	opacity:1;
+}
