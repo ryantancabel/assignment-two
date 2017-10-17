@@ -1,39 +1,92 @@
-.x > ul {
+.bar > ul {
 	background-color: black;
 	color: white;
-	font-size: 200%;
-	font-family: helvetica;
+	font-family: futura;
+	cursor: pointer;
+	padding-left: 50px;
 }
 
-.x > ul > li {
+.bar > ul > li {
 	list-style-type: none;
 	display: inline-block;
 	padding: 5px 25px;
-	position: relative; 
-
+	position: relative;
+	/*	font-size: 150%; */ 
 }
 
-.x > ul > li:hover {
+.bar > ul > li:hover {
 	background-color: grey;
 }
 
-ul.y {
+ul.drop {
 	position: absolute;
 	background-color: grey;
 	list-style-type: none; 
-	width: 125px;
-	padding-left: 5px;
+	width: 250px;
+	padding-left: 0px;
 	margin-left: -25px;
 	padding-top: 5px;
 	opacity:0;	
 }
 
-ul.y li {
+ul.drop li {
 	padding-left: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	font-size: 10%;
+	display: block;
 }
 
-.x li:hover .y {
+.bar li:hover .drop {
 	opacity:1;
 }
+
+ul.drop li:hover {
+	background-color: black;
+}
+
+.Acc {
+	float: right;
+}
+
+.Acc > ul.drop {
+	margin-left: -94px;
+}
+
+img {
+	width: 80%;
+	align: middle;
+}
+
+a:visited {
+	color: white;
+}
+
+a:link {
+	color: white;
+	text-decoration: none;
+}
+
+.login a:link {
+	color: black;
+}
+
+.container {
+	width: 100%;
+}
+
+.aside {
+	float: left;
+	max-width: 200px;
+}
+
+.section {
+	margin-left: 210px;
+	overflow: hidden;
+}
+
+	
+.footer > li {
+	font-size: 75%;
+}
+
