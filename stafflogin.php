@@ -3,11 +3,10 @@
 
 <p> Enter your details </p>
 
-<form action="new.php" method="post">
+<form action="stafflogin.php" method="post">
 	<label> Name: <input type="text" name="adminName"> </label> </br>
 	<label> Password: <input type="password" name="pass"> </label> </br>
 	<input type="submit" value="Submit"></br>
-</html>
 
 <?php
 
@@ -26,18 +25,12 @@
 
 	$result = mysql_query($query);
 
-	               while($row=mysql_fetch_array($result, MYSQL_NUM))
-                {
-                        foreach($row as $value)
-                        {
-                                echo "$value\n";
-                        }
-                }
 
-
-
-	if (mysql_num_rows($result)==0)
-		echo "You are Staff";
+	if (mysql_num_rows($result)==1)
+	{
+		echo "<p> You are Staff </p> \n <br />";
+		include("staffsettings.php");
+	}
 	else
 		echo "No!";
 
@@ -46,3 +39,4 @@
 
 ?>
 
+</html>
