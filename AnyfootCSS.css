@@ -4,6 +4,7 @@
 	font-family: futura;
 	cursor: pointer;
 	padding-left: 50px;
+	font-size: 150%;
 }
 
 .bar > ul > li {
@@ -11,10 +12,7 @@
 	display: inline-block;
 	padding: 5px 25px;
 	position: relative;
-}
-
-.font > ul {
-	font-size: 300%;
+	/*	font-size: 150%; */ 
 }
 
 .bar > ul > li:hover {
@@ -70,12 +68,24 @@ a:link {
 	text-decoration: none;
 }
 
-.login a:link {
-	color: black;
+a.login{
+	background-color: black;
+	padding: 10px 15px;
+    	margin: 5px 5px;
+    	border: none;
+    	cursor: pointer;
+    	width: 100%;
+
+
+}
+
+a.valid{
+	padding: 10px 10px;
 }
 
 .container {
 	width: 100%;
+	padding: 16px;
 }
 
 .aside {
@@ -90,6 +100,37 @@ a:link {
 
 	
 .footer > li {
-	font-size: 75%;
+	font-size: 55%;
+	
 }
+
+
+/*  Login Forms  */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button.Login {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+/* End  */
+
+
+
 
