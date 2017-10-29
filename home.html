@@ -5,9 +5,10 @@
         <title> Shop at Anyfoot </title>
         <meta charset = "UTF-8"/>
         <link rel="stylesheet" type="text/css" href="AnyfootCSS.css"/>
-	<script type="text/javascript" src="home.js"></script>
+	<script type="text/javascript" src="Javascript_Files/home.js"></script>
 	
 </head>
+
 <body>
 
 	<header>
@@ -17,12 +18,12 @@
 	<nav class='bar'>
 		
 		<ul>
-			<li> <a href="home.html"> Home </a> </li>
+			<li> > Home </li>
 
-			<li> <a href="Men.html"> Mens </a> 
+			<li>  Mens 
 				<ul class="drop">
-					<li>Dress</li>
-					<li>Sport </li>
+					<li onclick="getResults(1);">Dress</li>
+					<li onclick="getMe();">Sport</li>
 					<li>Running </li>
 					<li>Sandals </li>
 						
@@ -30,13 +31,14 @@
 			</li>
 			<li><a href="Women.html"> Womens</a>
 				<ul class="drop">
-					<li>Dress </li>
 					<li>Sport</li>
 					<li>Running</li>
 					<li>Sandals</li>
 					<li>Heels</li>
 				</ul>
-			</li>			
+			</li>
+			<li>
+							
 
 				<li class="Acc"> My Account
 				<ul class="drop">
@@ -49,11 +51,14 @@
 
 	</nav>
 
-	<div  id="jax">
+	<div id="main">
 
 	<img src="Untitled-1.jpg" alt="Main Image" />
 
 	</div>
+
+
+	<div id="blue"> </div>
 
 
 	<footer class = 'bar'>
