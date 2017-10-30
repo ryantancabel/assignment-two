@@ -12,8 +12,10 @@ function populate($query)
 	{
 		echo '<div class="box">'."\n";
 		echo "<p> <b> $row[1] </b> $row[2] </p>"."\n";
-		echo '<img src="Images/'.$row[8].'" alt="image" height="100" width="100" >'."\n";
-		echo '</div>'."\n";
+		echo '<img class="fit" src="Images/'.$row[8].'" alt="image" height="100" width="100" >'."\n";
+		echo "<p class=\"price\"> \$$row[3] </p>\n";
+		echo "<button type=\"button\" id=\"$row[0]\" value=\"Buy\"> </button>\n";
+		echo "</div>\n";
 
 	}
 
@@ -22,7 +24,8 @@ function populate($query)
 
 }
 
-
+if(isset($_GET["result"]))
+{
 if($_GET["result"] == 0)
 {
 	echo "\n".'<img src="Untitled-1.jpg" alt="Main Image" />'."\n";
@@ -77,11 +80,28 @@ if($_GET["result"] == 8)
 	populate($query); 
 }
 
+if($_GET["result"] == 9)
+{	
+	$query = 'SELECT * FROM ProductList WHERE GENDER = "Mens"';
+	populate($query); 
+}
+
+if($_GET["result"] == 10)
+{	
+	$query = 'SELECT * FROM ProductList WHERE GENDER = "Womens"';
+	populate($query); 
+}
+
+
+}
+
 if(isset($_GET["value"]))
 {
 	$value = $_GET[value];	
-	$query = "SELECT * FROM ProductList WHERE MAKE LIKE '%$value%' OR MODEL LIKE '%$value%'" ;
+
+	$query = "SELECT * FROM ProductList WHERE MAKE LIKE '%$value%' OR MODEL LIKE '%$value%'";
 	populate($query); 
 }
+
 
 ?>

@@ -20,26 +20,26 @@
 	<nav class='bar'>
 		
 		<ul>
-			<li onclick="getResults(0);"> Home </li>
+			<li onclick="getResults(0,0);"> Home </li>
 
-			<li>Mens 
+			<li> Mens
 				<ul class="drop">
-					<li onclick="getResults(1);">Dress</li>
-					<li onclick="getResults(2);">Sport</li>
-					<li onclick="getResults(3);">Running </li>
-					<li onclick="getResults(4);">Sandals </li>
+					<li onclick="getResults(0,1);">Dress</li>
+					<li onclick="getResults(0,2);">Sport</li>
+					<li onclick="getResults(0,3);">Running </li>
+					<li onclick="getResults(0,4);">Sandals </li>
 						
 				</ul>
 			</li>
 			<li>Womens
 				<ul class="drop">
-					<li onclick="getResults(5);">Sport</li>
-					<li onclick="getResults(6);">Running</li>
-					<li onclick="getResults(7);">Sandals</li>
-					<li onclick="getResults(8);">Heels</li>
+					<li onclick="getResults(0,5);">Sport</li>
+					<li onclick="getResults(0,6);">Running</li>
+					<li onclick="getResults(0,7);">Sandals</li>
+					<li onclick="getResults(0,8);">Heels</li>
 				</ul>
 			</li>
-			<li> <input type="input" id="searchbar">
+			<li> <input type="input" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
 			</li>
 			<li class="Acc"> My Account
 				<ul class="drop">

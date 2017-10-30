@@ -39,7 +39,7 @@ ul.drop {
 	padding-left: 0px;
 	margin-left: -25px;
 	padding-top: 5px;
-	opacity:0;	
+	visibility: hidden;	
 }
 
 ul.drop li {
@@ -51,7 +51,7 @@ ul.drop li {
 }
 
 .bar li:hover .drop {
-	opacity:1;
+	visibility: visible;
 }
 
 ul.drop li:hover {
@@ -146,14 +146,14 @@ button:hover {
 
 /* Search Outputs */
 
-#results {
+div #results {
 	width: 100%;
 	height: 600px;
     	overflow: scroll;
 }
 
 .box {
-	width: 25%;
+	width: 200px;
 	border: 5px solid black;
 	padding: 5px;
 	margin: 25px;

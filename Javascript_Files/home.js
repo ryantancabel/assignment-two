@@ -1,4 +1,12 @@
 
+/* document.getElementById("searchbar").onkeydown = getResults */
+
+function playn()
+{
+	document.getElementById("main").innerHTML = "Hello there !!!";
+}
+
+
 function getResults(value, num)
 {
 
@@ -23,7 +31,8 @@ function getResults(value, num)
 
 	if(value != 0) 
 	{
-		document.getElementById("main").innerHTML = "Hi There!";
+		xhr.open("GET","Javascript_Files/home.php?value=" + value, true);
+		xhr.send();	
 	}
 	
 }
