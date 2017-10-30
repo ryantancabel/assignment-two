@@ -1,14 +1,5 @@
-function getMe()
-{
 
-	document.getElementById("blue").innerHTML = "Hi There!";
-
-
-}
-
-
-
-function getResults(num)
+function getResults(value, num)
 {
 
 	xhr = new XMLHttpRequest(); 
@@ -24,8 +15,16 @@ function getResults(num)
 		}
 	};
 
-	xhr.open("GET","Javascript_Files/home.php?result=" + num, true);
-	xhr.send();
+	if(value == 0)
+	{
+		xhr.open("GET","Javascript_Files/home.php?result=" + num, true);
+		xhr.send();
+	}
+
+	if(value != 0) 
+	{
+		document.getElementById("main").innerHTML = "Hi There!";
+	}
 	
 }
 

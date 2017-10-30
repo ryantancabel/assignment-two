@@ -1,7 +1,19 @@
+.content {
+	max-width: 75%;
+	margin: auto;
+	background: white;
+	padding: 10px;
+}
+
+
+
+
+/* For Header, Footer and Features of HomePage */
+
 .bar > ul {
 	background-color: black;
 	color: white;
-	font-family: futura;
+	font-family: helvetica;
 	cursor: pointer;
 	padding-left: 50px;
 	font-size: 150%;
@@ -34,7 +46,7 @@ ul.drop li {
 	padding-left: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	font-size: 10%;
+	font-size: 50%;
 	display: block;
 }
 
@@ -55,8 +67,9 @@ ul.drop li:hover {
 }
 
 img {
-	width: 80%;
-	align: middle;
+	width: 100%;
+	margin-left: auto;
+    	margin-right: auto;
 }
 
 a:visited {
@@ -100,9 +113,9 @@ a.valid{
 
 	
 .footer > li {
-	font-size: 55%;
-	
+	font-size: 55%;;
 }
+/* End */
 
 
 /*  Login Forms  */
@@ -130,6 +143,24 @@ button:hover {
     opacity: 0.8;
 }
 /* End  */
+
+/* Search Outputs */
+
+#results {
+	width: 100%;
+	height: 600px;
+    	overflow: scroll;
+}
+
+.box {
+	width: 25%;
+	border: 5px solid black;
+	padding: 5px;
+	margin: 25px;
+	float: left;
+}
+	
+
 
 
 
