@@ -39,7 +39,7 @@ function getCookie(name) {
 
 function getJSON(IDent)
 {
-	var myObj, x;
+	var myObj;
 
 	myObj = [];
 
@@ -47,7 +47,7 @@ function getJSON(IDent)
 	if(existingValue){
 		 var existingObjs = JSON.parse(existingValue);
 		 var isFound = false;
-		 
+
 		 if(existingObjs.length >0){
 			 for(var k=0; k< existingObjs.length; k++){
 				 if(existingObjs[k].id == IDent){
@@ -71,7 +71,41 @@ function getJSON(IDent)
 		  	document.cookie = "value=" + complete + ";expires=Thu, 18 Sep 2018 12:00:00 UTC; path=/";
 
   }
+}
 
+function cookieSend()
+{
+	xhr = new XMLHttpRequest();
 
+	xhr.onreadystatechange = function () {
+
+		if (xhr.readyState == 4 && xhr.status == 200)
+		{
+			var result = xhr.responseText;
+			document.getElementById("main").innerHTML = xhr.responseText;
+
+		}
+	};
+
+		xhr.open("GET","PHP Files/cart.php", true);
+		xhr.send();
+}
+
+function removeProduct(IDent)
+{
+
+	var existingValue = getCookie("value");
+	var existingObjs = JSON.parse(existingValue);
+	document.getElementById("red").innerHTML = existingObjs[4].quantity;
+
+	for(var i = 0; i<existingObjs.length; i++)
+	{
+		if(existingObjs[i].id = IDent)
+		{
+			existingObjs.splice(i,1);
+		}
+	}
+
+	document.getElementById("red").innerHTML = existingObjs[4].quantity;
 
 }
