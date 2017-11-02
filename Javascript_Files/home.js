@@ -106,6 +106,5 @@ function removeProduct(IDent)
 		}
 	}
 
-	document.getElementById("red").innerHTML = existingObjs[4].quantity;
 
 }
