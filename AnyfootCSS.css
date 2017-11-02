@@ -6,8 +6,6 @@
 }
 
 
-
-
 /* For Header, Footer and Features of HomePage */
 
 .bar > ul {
@@ -24,7 +22,7 @@
 	display: inline-block;
 	padding: 5px 25px;
 	position: relative;
-	/*	font-size: 150%; */ 
+
 }
 
 .bar > ul > li:hover {
@@ -72,9 +70,11 @@ img {
     	margin-right: auto;
 }
 
+
 a:visited {
 	color: white;
 }
+
 
 a:link {
 	color: white;
@@ -96,25 +96,60 @@ a.valid{
 	padding: 10px 10px;
 }
 
+
 .container {
-	width: 100%;
-	padding: 16px;
+	width: 50%;
+	padding: 15px;
+	border: solid;
+	margin: 30px;
 }
 
-.aside {
-	float: left;
-	max-width: 200px;
-}
+
 
 .section {
 	margin-left: 210px;
 	overflow: hidden;
 }
 
+aside{
+	float: right;
+	width: 25%;
+	margin-left: 30px;
+    	border: 3px solid gray;
+    	padding: 10 px;	
+	background-color: #00FFFF;
+	
+	
+}
+
+a.sign{
+	background-color: green;
+	border-radius: 25px;
+}
+
+article.asics{
+	width: 70%;
+	margin:10px;
+	border:1px solid black;
+	padding: 10px;
+	
+}
+
+article.nike{
+	width: 70%;
+	margin:10px;
+	border:1px solid black;
+	padding: 10px;
+
+}
+
 	
 .footer > li {
-	font-size: 55%;;
+	font-size: 55%;
+
 }
+
+
 /* End */
 
 
@@ -133,7 +168,7 @@ button.Login {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px 0px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -160,8 +195,5 @@ div #results {
 	float: left;
 }
 	
-
-
-
 
 
