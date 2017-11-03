@@ -1,47 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
         <title> Shop at Anyfoot </title>
         <meta charset = "UTF-8"/>
         <link rel="stylesheet" type="text/css" href="AnyfootCSS.css"/>
-	      <script type="text/javascript" src="Javascript_Files/home.js"></script>
+	      <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/3C4E8DF8-1862-BF47-A397-D21AFEECCE13/main.js" charset="UTF-8"></script><script type="text/javascript" src="Javascript_Files/home.js"></script>
 </head>
 <body onload="cookieSend();">
+<div class = "content">
 
 	<header>
+
+		<img src="Images/anyfoot.png" alt="foot" class="logo">
 		<h1> Anyfoot </h1>
 	</header>
 
 	<nav class='bar'>
 
+		
 		<ul>
-			<li> <a href="home.html"> Home </a> </li>
+			<li><a href="home.html"> Home </a> </li>
 
-			<li> <a href="Men.html"> Mens </a>
+			<li> Mens
 				<ul class="drop">
-					<li>Dress</li>
-					<li>Sport </li>
-					<li>Running </li>
-					<li>Sandals </li>
-
+					<li onclick="getResults(0,1);">Dress</li>
+					<li onclick="getResults(0,2);">Sport</li>
+					<li onclick="getResults(0,3);">Running </li>
+					<li onclick="getResults(0,4);">Sandals </li>
+						
 				</ul>
 			</li>
-			<li><a href="Women.html"> Womens</a>
+			<li>Womens
 				<ul class="drop">
-					<li>Dress </li>
-					<li>Sport</li>
-					<li>Running</li>
-					<li>Sandals</li>
-					<li>Heels</li>
+					<li onclick="getResults(0,5);">Sport</li>
+					<li onclick="getResults(0,6);">Running</li>
+					<li onclick="getResults(0,7);">Sandals</li>
+					<li onclick="getResults(0,8);">Heels</li>
 				</ul>
 			</li>
-
+			<li> <input type="text" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
+			</li>
 			<li class="Acc"> My Account
 				<ul class="drop">
 					<li><a href="SignIn.html"> Sign In</a></li>
 					<li> <a href="Cart.html"> My Cart</a></li>
-					<li> <a href="SignUp.html"> Sign Up</a> </li>
+					<li><a href="SignUp.html"> Sign Up</a> </li>
 				</ul>
 			</li>
 		</ul>
@@ -62,7 +65,7 @@
 
 
 		<h2> Anyfoot </h2>
-		<a href="" class="login"> Support Staff Login </a>
+		<a href="stafflogin.html" class="login"> Support Staff Login </a>
 
 		 <a href="http://jigsaw.w3.org/css-validator/check/referer">
         	 	<img style="border:0;width:88px;height:31px"
@@ -70,5 +73,6 @@
             			alt="Valid CSS!" />
 
 	</footer>
+</div>
 </body>
 </html>

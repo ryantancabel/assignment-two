@@ -10,13 +10,14 @@
 <body>
 <div class = "content">
 	<header>
+		<img src="Images/anyfoot.png" alt="foot" class="logo">
 		<h1> Anyfoot </h1>	
 	</header>
 
 	<nav class='bar'>
 		
 		<ul>
-			<li onclick="getResults(0,0);"> Home </li>
+			<li><a href="home.html"> Home </a></li>
 
 			<li> Mens
 				<ul class="drop">
@@ -35,7 +36,7 @@
 					<li onclick="getResults(0,8);">Heels</li>
 				</ul>
 			</li>
-			<li> <input type="input" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
+			<li> <input type="text" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
 			</li>
 			<li class="Acc"> My Account
 				<ul class="drop">
@@ -53,23 +54,26 @@
 
 
 <h3>My Account </h3>
-<p>Sign In
-</br>Sign Up
+<p>
+Sign In
 </br>cart
+</br>Sign Up
 </p>
 
 <h3> Mens </h3>
-<p>Dress
+<p>
+Dress
 </br>Sports
+</br>Running
 </br>sandals
 
 </p>
 
 <h3> Womens</h3>
-<p>Dress
+<p>Sport
+</br> Running
 </br>Heels
 </br>Sandals
-
 </p>
 
 
