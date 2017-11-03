@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -32,8 +33,8 @@ function printform()
   if($_GET["choice"] == "product") {
 	return '<br />
 		<br />
-
-		<form action="" onsubmit="addproduct()" id="adding">
+		<div id="res"></div>
+		<form action="" id="adding">
 			<label> Make: <input type="text" name="Make"> </label> </br>
 			<label> Model: <input type="text" name="Model"> </label> </br>
 			<label> Price: <input type="text" name="Price"> </label> </br>
@@ -50,9 +51,10 @@ function printform()
 					<option> N </option>
 					</select> </label> </br>
 			<label> Image Source: <input type="text" name="Image"> </label> </br>
-			<label> Stock: <input type="text" name="Stock"> </label> </br>
+			<label> Stock: <input type="text" name="Stock"> </label> </br>	
+                        <input type="hidden" name="submit2" value="true" />
 			<input type="reset" name="ResetButton" value="Reset" />
-               		<input type="submit" name="Submit2" value="Submit" />
+               		<input type="submit" name="Submit2" value="Submit"  />
 	</form>';
   }
 
@@ -83,82 +85,83 @@ function printform()
 
 function addProduct()
 {
-	if(isset($_GET["Make"]))
+	if(isset($_POST["Make"]))
 	{
-		$make = $_GET["Make"];
+		$make = $_POST["Make"];
 	}
-	else
-		$make = null;
+	else {
+		$make = null; }
 
-	if(isset($_GET["Model"]))
+	if(isset($_POST["Model"]))
 	{
-		$model = $_GET["Model"];
+		$model = $_POST["Model"];
 	}
-	else
-		$model = null;
+	else {
+		$model = null; }
 
 
-	if(isset($_GET["Price"]))
+	if(isset($_POST["Price"]))
 	{
-		$price = $_GET["Price"];
+		$price = $_POST["Price"];
 	}
-	else
-		$price = null;
+	else {
+		$price = null; }
 
-	if(isset($_GET["Gender"]))
+	if(isset($_POST["Gender"]))
 	{
-		$gender = $_GET["Gender"];
+		$gender = $_POST["Gender"];
 	}
-	else
-		$gender = null;
+	else {
+		$gender = null; }
 	
-	if(isset($_GET["Type"]))
+	if(isset($_POST["Type"]))
 	{
-		$type = $_GET["Type"];
+		$type = $_POST["Type"];
 	}
-	else
-		$type = null;
+	else {
+		$type = null; }
 
-	if(isset($_GET["Colour"]))
+	if(isset($_POST["Colour"]))
 	{
-		$colour = $_GET["Colour"];
+		$colour = $_POST["Colour"];
 	}
-	else
-		$colour = null;
+	else {
+		$colour = null; }
 
-	if(isset($_GET["DiscountClub"]))
+	if(isset($_POST["DiscountClub"]))
 	{
-		$club = $_GET["DiscountClub"];	
+		$club = $_POST["DiscountClub"];	
 	}
-	else
-		$club = null;
+	else {
+		$club = null; }
 
-	if(isset($_GET["Image"]))
+	if(isset($_POST["Image"]))
 	{
-		$image = $_GET["Image"];
+		$image = $_POST["Image"];
 	}
-	else
-		$Image = null;
+	else {
+		$Image = null; }
 
-	if(isset($_GET["Stock"]))
+	if(isset($_POST["Stock"]))
 	{
-		$stock = $_GET["Stock"];
+		$stock = $_POST["Stock"];
 	}
-	else
-		$stock = null;
+	else {
+		$stock = null; }
+
 	
 	include 'db.php';
 
 	$query = "INSERT INTO ProductList (MAKE, MODEL, PRICE, GENDER, TYPE, DISCOUNTCLUB, IMAGE, STOCK)
-	VALUES ('$make', '$model', $price, '$gender', '$type', '$club', '$image', $stock)";
+	VALUES ('$make', '$model', '$price', '$gender', '$type', '$club', '$image', '$stock')";
 
 	$result = mysql_query($query);
 
 	if ($result == null) {
-    	return "Did not work!";
+    	echo  "Did not work!";
     	}
 	else {
-	return "The entry was added";
+	echo "The entry was added";
 	}
 
 }
@@ -178,10 +181,9 @@ if(isset($_GET["choice"]))
   echo printform();
 }
 
-if(isset($_GET["submit2"]))
+if(isset($_POST["submit2"]))
 {
   echo addProduct();
 }
 
 ?>
-

@@ -1,4 +1,3 @@
-
 function validate()
 {
 	var x = document.cookie;
@@ -36,6 +35,11 @@ function output(choice)
 			console.log(this.responseText);
 			var z = this.responseText
 			document.getElementById("inputhere").innerHTML = z;
+			
+			
+			//somewhere here
+			handleNewSubmit();
+			
 		}
 	};
 
@@ -43,6 +47,47 @@ function output(choice)
 	xmlhttp.send();
 	document.getElementById("here").innerHTML = xmlhttp.responseText;
 	return false;
+}
+
+function handleNewSubmit(){
+  
+  var addForm = document.getElementById('adding');
+	var result = document.getElementById('inputhere');
+  
+  addForm.onsubmit = function(e){
+    
+    e.preventDefault();
+    
+    
+    var formData = new FormData(addForm);
+    
+    
+        {
+      
+            if(window.XMLHttpRequest){
+        var xmlhttp = new XMLHttpRequest();
+      } else {
+        var xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      
+            xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+          	result.textContent = xmlhttp.responseText;
+	
+        }
+        
+      }
+      
+      xmlhttp.open('POST', 'PHP_Files/stafflogin.php', true);
+      xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      
+
+      xmlhttp.send(formData);
+
+    }
+    
+    return false;
+  }
 }
 
 
@@ -63,8 +108,4 @@ function showUser(str) {
     }
 }
 
-function addproduct()
-{
-	var blue = document.getElementById("adding").innerHTML = "";
-	document.getElementById("txtHint").innerHTML = blue;
-}
+

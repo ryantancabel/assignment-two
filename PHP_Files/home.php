@@ -95,7 +95,7 @@ if(isset($_GET["value"]))
 {
 	$value = $_GET[value];
 
-	$query = "SELECT * FROM ProductList WHERE MAKE LIKE '%$value%' OR MODEL LIKE '%$value%'";
+	$query = "SELECT * FROM ProductList WHERE MAKE LIKE '$value%' OR MODEL LIKE '$value%'";
 	populate($query);
 }
 
