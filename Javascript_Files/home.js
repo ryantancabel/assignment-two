@@ -17,13 +17,13 @@ function getResults(value, num)
 
 	if(value == 0)
 	{
-		xhr.open("GET","PHP Files/home.php?result=" + num, true);
+		xhr.open("GET","./PHP_Files/home.php?result=" + num, true);
 		xhr.send();
 	}
 
 	if(value != 0)
 	{
-		xhr.open("GET","PHP Files/home.php?value=" + value, true);
+		xhr.open("GET","./PHP_Files/home.php?value=" + value, true);
 		xhr.send();
 	}
 
@@ -61,7 +61,7 @@ function getJSON(IDent)
 		 }
 
 		 var exists = JSON.stringify(existingObjs);
-			alert(exists);
+			alert("You have added this to your cart");
 			var date = new Date();
       date.setTime(date.getTime()+ 60*60*1000);
 			document.cookie = "value=" + exists + ";expires=" + date.toGMTString() + "; path=/";
@@ -69,11 +69,10 @@ function getJSON(IDent)
 	}else{
 	     myObj.push({"id":IDent, "quantity":1});
 			 var complete = JSON.stringify(myObj);
-		  	alert(complete);
+		  	alert("You have added this to your cart");
 				var date = new Date();
 				date.setTime(date.getTime()+ 60*60*1000);
 				document.cookie = "value=" + complete + ";expires=" + date.toGMTString() + "; path=/";
-
   }
 }
 
@@ -91,7 +90,7 @@ function cookieSend()
 		}
 	};
 
-		xhr.open("GET","PHP Files/cart.php", true);
+		xhr.open("GET","./PHP_Files/cart.php", true);
 		xhr.send();
 }
 
@@ -139,7 +138,7 @@ function isLogin()
 			};
 
 	document.getElementById("errormessage").innerHTML = "hello!";
-	xmlhttp.open("GET","PHP Files/stafflogin.php?uname=" + uname +"&psw=" + pass,true);
+	xmlhttp.open("GET","PHP_Files/stafflogin.php?uname=" + uname +"&psw=" + pass,true);
 	xmlhttp.send();
 	return false;
 }

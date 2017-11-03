@@ -39,7 +39,7 @@ function output(choice)
 		}
 	};
 
-	xmlhttp.open("GET","PHP Files/stafflogin.php?choice=" + choice, true);
+	xmlhttp.open("GET","PHP_Files/stafflogin.php?choice=" + choice, true);
 	xmlhttp.send();
 	document.getElementById("here").innerHTML = xmlhttp.responseText;
 	return false;
@@ -61,4 +61,10 @@ function showUser(str) {
         xmlhttp.open("GET","getuser.php?q="+str,true);
         xmlhttp.send();
     }
+}
+
+function addproduct()
+{
+	var blue = document.getElementById("adding").innerHTML = "";
+	document.getElementById("txtHint").innerHTML = blue;
 }

@@ -13,7 +13,7 @@ function populate($query)
 
 		echo '<div class="box">'."\n";
 		echo "<p> <b> $row[1] </b> $row[2] </p>"."\n";
-		echo '<img class="fit" src="Images/'.$row[8].'" alt="image" height="100" width="100" >'."\n";
+		echo '<img class="fit" src="./Images/'.$row[7].'" alt="image" height="100" width="100" >'."\n";
 		echo "<p class=\"price\"> \$$row[3] </p>\n";
 		echo '<button id="'.$row[0].'" type="button" onclick="getJSON(this.id)"> Click Me </button>'."\n";
 		echo "</div>\n";
@@ -78,13 +78,13 @@ if($_GET["result"] == 8)
 
 if($_GET["result"] == 9)
 {
-	$query = 'SELECT * FROM ProductList WHERE GENDER = "Mens"';
+	$query = 'SELECT * FROM ProductList WHERE MAKE = "Asics"';
 	populate($query);
 }
 
 if($_GET["result"] == 10)
 {
-	$query = 'SELECT * FROM ProductList WHERE GENDER = "Womens"';
+	$query = 'SELECT * FROM ProductList WHERE MAKE = "Nike"';
 	populate($query);
 }
 

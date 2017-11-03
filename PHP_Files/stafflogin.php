@@ -33,7 +33,7 @@ function printform()
 	return '<br />
 		<br />
 
-		<form action="PHP Files/stafflogin.php" method="post" id="adding">
+		<form action="" onsubmit="addproduct()" id="adding">
 			<label> Make: <input type="text" name="Make"> </label> </br>
 			<label> Model: <input type="text" name="Model"> </label> </br>
 			<label> Price: <input type="text" name="Price"> </label> </br>
@@ -81,16 +81,16 @@ function printform()
 
 
 
-function addProduct
+function addProduct()
 {
-	if(isset($_GET["Make"])
+	if(isset($_GET["Make"]))
 	{
 		$make = $_GET["Make"];
 	}
 	else
 		$make = null;
 
-	if(isset($_GET["Model"])
+	if(isset($_GET["Model"]))
 	{
 		$model = $_GET["Model"];
 	}
@@ -98,49 +98,49 @@ function addProduct
 		$model = null;
 
 
-	if(isset($_GET["Price"])
+	if(isset($_GET["Price"]))
 	{
 		$price = $_GET["Price"];
 	}
 	else
 		$price = null;
 
-	if(isset($_GET["Gender"])
+	if(isset($_GET["Gender"]))
 	{
 		$gender = $_GET["Gender"];
 	}
 	else
 		$gender = null;
 	
-	if(isset($_GET["Type"])
+	if(isset($_GET["Type"]))
 	{
 		$type = $_GET["Type"];
 	}
 	else
 		$type = null;
 
-	if(isset($_GET["Colour"])
+	if(isset($_GET["Colour"]))
 	{
 		$colour = $_GET["Colour"];
 	}
 	else
 		$colour = null;
 
-	if(isset($_GET["DiscountClub"])
+	if(isset($_GET["DiscountClub"]))
 	{
 		$club = $_GET["DiscountClub"];	
 	}
 	else
 		$club = null;
 
-	if(isset($_GET["Image"])
+	if(isset($_GET["Image"]))
 	{
 		$image = $_GET["Image"];
 	}
 	else
 		$Image = null;
 
-	if(isset($_GET["Stock"])
+	if(isset($_GET["Stock"]))
 	{
 		$stock = $_GET["Stock"];
 	}
@@ -150,9 +150,18 @@ function addProduct
 	include 'db.php';
 
 	$query = "INSERT INTO ProductList (MAKE, MODEL, PRICE, GENDER, TYPE, DISCOUNTCLUB, IMAGE, STOCK)
-	VALUES ('$make', '$model', $price, '$gender', '$type', '$club', '$image', $stock
+	VALUES ('$make', '$model', $price, '$gender', '$type', '$club', '$image', $stock)";
 
+	$result = mysql_query($query);
 
+	if ($result == null) {
+    	return "Did not work!";
+    	}
+	else {
+	return "The entry was added";
+	}
+
+}
 	
 
 
