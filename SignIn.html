@@ -10,6 +10,7 @@
 <body>
 <div class = "content">
 	<header>
+		<img src="Images/anyfoot.png" alt="foot" class="logo">
 		<h1> Anyfoot </h1>	
 	</header>
 
@@ -35,7 +36,7 @@
 					<li onclick="getResults(0,8);">Heels</li>
 				</ul>
 			</li>
-			<li> <input type="input" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
+			<li> <input type="text" id="searchbar" onkeyup="getResults(document.getElementById('searchbar').value, 0);">
 			</li>
 			<li class="Acc"> My Account
 				<ul class="drop">
@@ -52,21 +53,25 @@
 <h2> User Login</h2>
 
 
-<form action="action_page.php">
-  
+<form onsubmit="isLogin()">
+
 
 <div class="container">
     <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" id="uname" required>
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit" class="Login">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
+    <input type="password" placeholder="Enter Password" id="psw" required>
+
+    <input type="submit" value="Login"/>
   </div>
-</div>
+
 </form>
+
+ 
+
+</div>
+
 
 
 

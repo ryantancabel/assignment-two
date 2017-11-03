@@ -64,7 +64,7 @@ ul.drop li:hover {
 	margin-left: -94px;
 }
 
-.img {
+img {
 	width: 25%;
 	margin-left: auto;
 }
@@ -72,15 +72,18 @@ ul.drop li:hover {
 img.logo{
 	width: 5%;
 	float:right;
-	margin-right: 85%;
+	margin-right: 83%;
 
 
 }
 
 p.home{
-	float: right;
-	margin-right: 5%;
+	margin:auto;
+	font-family: Arial, Helvetica, sans-serif;
+	color: blue;
+	
 }
+	
 
 
 a:visited {
@@ -126,15 +129,25 @@ a.valid{
 aside{
 	float: right;
 	width: 25%;
-	height: 200%;
 	margin-left: 30px;
+	margin-top: -1%;
     	border: 3px solid gray;
     	padding: 10 px;	
 	background-color:#87CEFA;
 	
 	
+}
+
+.seperate{
+	margin-left:60%;
+	margin-top: -18%;
+	margin-bottom: 15%;
+	border: 1px solid black;
+	width: 35%;
+	padding: 10px;
 	
 }
+
 
 a.sign{
 	background-color: green;
@@ -142,17 +155,20 @@ a.sign{
 }
 
 article.asics{
-	width: 70%;
-	margin:10px;
+	width: 25%;
+	margin:auto;
 	border:1px solid black;
 	padding: 10px;
+	background-color: #F0FFFF;
 	
 	
 }
 
 article.nike{
-	width: 70%;
-	margin:10px;
+	width: 25%;
+	margin-right: 70%;
+	margin-top: -7%;
+	margin-bottom:10%;
 	border:1px solid black;
 	padding: 10px;
 
@@ -163,6 +179,7 @@ article.nike{
 	font-size: 55%;
 
 }
+
 
 
 /* End */
@@ -192,6 +209,7 @@ button.Login {
 button:hover {
     opacity: 0.8;
 }
+
 /* End  */
 
 /* Search Outputs */
