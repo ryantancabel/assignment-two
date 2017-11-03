@@ -1,5 +1,5 @@
 .content {
-	max-width: 75%;
+	max-width: 85%;
 	margin: auto;
 	background: white;
 	padding: 10px;
@@ -65,9 +65,21 @@ ul.drop li:hover {
 }
 
 img {
-	width: 100%;
+	width: 25%;
 	margin-left: auto;
-    	margin-right: auto;
+}
+
+img.logo{
+	width: 5%;
+	float:right;
+	margin-right: 85%;
+
+
+}
+
+p{
+	float: right;
+	margin-right: 5%;
 }
 
 
@@ -114,10 +126,12 @@ a.valid{
 aside{
 	float: right;
 	width: 25%;
+	height: 200%;
 	margin-left: 30px;
     	border: 3px solid gray;
     	padding: 10 px;	
-	background-color: #00FFFF;
+	background-color:#87CEFA;
+	
 	
 	
 }
@@ -132,6 +146,7 @@ article.asics{
 	margin:10px;
 	border:1px solid black;
 	padding: 10px;
+	
 	
 }
 
