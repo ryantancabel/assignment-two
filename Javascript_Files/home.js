@@ -17,13 +17,13 @@ function getResults(value, num)
 
 	if(value == 0)
 	{
-		xhr.open("GET","Javascript_Files/home.php?result=" + num, true);
+		xhr.open("GET","PHP Files/home.php?result=" + num, true);
 		xhr.send();
 	}
 
 	if(value != 0)
 	{
-		xhr.open("GET","Javascript_Files/home.php?value=" + value, true);
+		xhr.open("GET","PHP Files/home.php?value=" + value, true);
 		xhr.send();
 	}
 
@@ -62,13 +62,17 @@ function getJSON(IDent)
 
 		 var exists = JSON.stringify(existingObjs);
 			alert(exists);
-			document.cookie = "value=" + exists + ";expires=Thu, 18 Sep 2018 12:00:00 UTC; path=/";
+			var date = new Date();
+      date.setTime(date.getTime()+ 60*60*1000);
+			document.cookie = "value=" + exists + ";expires=" + date.toGMTString() + "; path=/";
 
 	}else{
 	     myObj.push({"id":IDent, "quantity":1});
 			 var complete = JSON.stringify(myObj);
 		  	alert(complete);
-		  	document.cookie = "value=" + complete + ";expires=Thu, 18 Sep 2018 12:00:00 UTC; path=/";
+				var date = new Date();
+				date.setTime(date.getTime()+ 60*60*1000);
+				document.cookie = "value=" + complete + ";expires=" + date.toGMTString() + "; path=/";
 
   }
 }
@@ -91,20 +95,51 @@ function cookieSend()
 		xhr.send();
 }
 
+
+
 function removeProduct(IDent)
 {
 
 	var existingValue = getCookie("value");
 	var existingObjs = JSON.parse(existingValue);
-	document.getElementById("red").innerHTML = existingObjs[4].quantity;
 
 	for(var i = 0; i<existingObjs.length; i++)
 	{
-		if(existingObjs[i].id = IDent)
+		if(existingObjs[i].id == IDent)
 		{
 			existingObjs.splice(i,1);
 		}
 	}
 
+	var revised = JSON.stringify(existingObjs);
+	var date = new Date();
+	date.setTime(date.getTime()+ 60*60*1000);
+	document.cookie = "value=" + revised + ";expires=" + date.toGMTString() + "; path=/";
 
+	cookieSend();
+
+}
+
+function isLogin()
+{
+	event.preventDefault();
+	var uname = document.getElementById("uname").value;
+	var pass = document.getElementById("psw").value;
+
+	xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					if (this.responseText.trim() == 'loggedin') {
+						window.location.replace('staffsettings.html');
+					}
+					else {
+						document.getElementById("errormessage").innerHTML = this.responseText;
+					}
+				}
+			};
+
+	document.getElementById("errormessage").innerHTML = "hello!";
+	xmlhttp.open("GET","PHP Files/stafflogin.php?uname=" + uname +"&psw=" + pass,true);
+	xmlhttp.send();
+	return false;
 }

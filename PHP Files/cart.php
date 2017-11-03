@@ -9,7 +9,7 @@ if(isset($_COOKIE['value']))
 
   $totalprice = 0;
 
-  include '../Javascript_Files/db.php';
+  include 'db.php';
 
   echo "<table border=\"1\">\n
           <tr>\n
